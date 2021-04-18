@@ -1,8 +1,10 @@
 # LooseMail
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/loose_mail`. To experiment with that code, run `bin/console` for an interactive prompt.
+[Mail](https://github.com/mikel/mail) ではちゃんと扱えないような日本固有のメールをテキトーに扱えるように Mail にモンキーパッチをあてます。
 
-TODO: Delete this and the text above, and describe your gem
+* charset が ISO-2022-JP なのに ISO-2022-JP に無い文字(① / ㈱ / ｱ(半角カナ)等)が使われててもそれなりになんとかします
+* 文字の途中で分割されているような不正な MIME エンコーディングされた文字列をそれなりになんとかします
+* ISO-2022-JP の MIME エンコーディングで表現された添付ファイル名をそれなりになんとかします
 
 ## Installation
 
@@ -22,17 +24,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/loose_mail.
+```ruby
+require 'loose_mail'
+```
 
 ## License
 

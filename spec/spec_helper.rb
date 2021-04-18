@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'rspec-power_assert'
 require "loose_mail"
 
 RSpec.configure do |config|
